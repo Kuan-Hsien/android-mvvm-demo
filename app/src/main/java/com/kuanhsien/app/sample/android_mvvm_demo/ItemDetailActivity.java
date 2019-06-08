@@ -1,6 +1,7 @@
 package com.kuanhsien.app.sample.android_mvvm_demo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -25,12 +26,24 @@ public class ItemDetailActivity extends AppCompatActivity {
 
     private void setupView() {
 
-        // get view component
-        TextView tvTitle = findViewById(R.id.tv_item_detail_title);
-        TextView tvDesc = findViewById(R.id.tv_item_detail_desc);
+        // 1. get view component
+        final TextView tvTitle = findViewById(R.id.tv_item_detail_title);
+        final TextView tvDesc = findViewById(R.id.tv_item_detail_desc);
         //ImageView ivImage = findViewById(R.id.iv_item_detail_image);
 
-        
+        // 2. observe livedata (create livedata first, or will encounter NullPointerException)
+        mViewModel.getItemInfo().observe(this, new Observer<ItemInfoModel>() {
+            @Override
+            public void onChanged(ItemInfoModel itemInfo) {
+
+                // set view
+                tvTitle.setText(itemInfo.getTitle());
+                tvDesc.setText(itemInfo.getDesc());
+                // ivImage.setBackgroundResource(itemInfo.getImageRes());
+            }
+        });
+
+        // 3. get data and setup view
         // get value from bundle
         String itemId;
         Bundle bundle = getIntent().getExtras();
@@ -42,12 +55,5 @@ public class ItemDetailActivity extends AppCompatActivity {
 
         // use viewModel to get data from model
         mViewModel.prepareData(itemId);
-        ItemInfoModel itemInfo = mViewModel.getItemInfo();
-
-        // set view
-        tvTitle.setText(itemInfo.getTitle());
-        tvDesc.setText(itemInfo.getDesc());
-        // ivImage.setBackgroundResource(itemInfo.getImageRes());
-
     }
 }

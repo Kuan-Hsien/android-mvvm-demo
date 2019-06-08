@@ -2,18 +2,23 @@ package com.kuanhsien.app.sample.android_mvvm_demo;
 
 import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemInfoModel;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 class ItemDetailViewModel extends ViewModel {
 
-    private ItemInfoModel mItemInfo;
+    private MutableLiveData<ItemInfoModel> mItemInfo;
 
-    ItemInfoModel getItemInfo() {
+    LiveData<ItemInfoModel> getItemInfo() {
+        if (mItemInfo == null) {
+            mItemInfo = new MutableLiveData<>();
+        }
         return mItemInfo;
     }
 
-
     void prepareData(String itemId) {
-        mItemInfo = new ItemInfoModel(itemId, "Title: " + itemId , "Desc", 0);
+        ItemInfoModel ItemInfo = new ItemInfoModel(itemId, "Title: " + itemId , "Desc", 0);
+        mItemInfo.postValue(ItemInfo);
     }
 }
