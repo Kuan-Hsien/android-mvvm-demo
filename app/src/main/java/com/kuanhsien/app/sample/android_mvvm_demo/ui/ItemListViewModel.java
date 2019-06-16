@@ -2,7 +2,6 @@ package com.kuanhsien.app.sample.android_mvvm_demo.ui;
 
 import android.content.Context;
 import android.os.AsyncTask;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;

@@ -7,11 +7,9 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.kuanhsien.app.sample.android_mvvm_demo.R;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemInfoModel;
 import com.kuanhsien.app.sample.android_mvvm_demo.utils.Constants;
-
 import java.util.List;
 
 
