@@ -12,7 +12,7 @@ import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemInfoModel;
 import java.util.List;
 
 
-public class ItemListActivity extends AppCompatActivity {
+public class ItemListActivity extends AppCompatActivity implements ItemListAdapter.OnItemClickListener {
 
     private ItemListViewModel mViewModel;
     private ItemListAdapter mAdapter;
@@ -38,8 +38,7 @@ public class ItemListActivity extends AppCompatActivity {
             public void onChanged(List<ItemInfoModel> itemInfo) {
 
                 // set view
-                // TODO: set view
-
+                mAdapter.setData(itemInfo);
             }
         });
         mViewModel.setRepository(this);
@@ -54,6 +53,14 @@ public class ItemListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         mAdapter = new ItemListAdapter();
+        mAdapter.setOnItemClickListener(this);
         recyclerView.setAdapter(mAdapter);
+    }
+
+
+    // Implement ItemListAdapter.OnItemClickListener
+    @Override
+    public void onItemClick(ItemInfoModel data) {
+
     }
 }
