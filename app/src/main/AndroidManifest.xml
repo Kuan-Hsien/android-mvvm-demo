@@ -22,6 +22,11 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".ui.ItemListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+        </activity>
+
         <activity android:name=".ui.ItemDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">

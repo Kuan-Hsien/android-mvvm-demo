@@ -1,6 +1,7 @@
 package com.kuanhsien.app.sample.android_mvvm_demo.ui;
 
 import android.content.Context;
+import android.os.AsyncTask;
 
 import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemInfoModel;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemRepository;
@@ -35,8 +36,14 @@ class ItemDetailViewModel extends ViewModel {
 
 
     // fun
-    void prepareData(String itemId) {
-        ItemInfoModel ItemInfo = new ItemInfoModel(itemId, "Title: " + itemId , "Desc", 0);
-        mItemInfo.postValue(ItemInfo);
+    void prepareData(final String itemId) {
+
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+
+                mItemInfo.postValue(mRepository.getItemInfo(itemId));
+            }
+        });
     }
 }

@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnA.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                startDetailActivity(btnA.getText().toString());
+                startActivity(new Intent(MainActivity.this, ItemListActivity.class));
             }
         });
 

@@ -1,5 +1,6 @@
 package com.kuanhsien.app.sample.android_mvvm_demo.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -9,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.kuanhsien.app.sample.android_mvvm_demo.R;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemInfoModel;
+import com.kuanhsien.app.sample.android_mvvm_demo.utils.Constants;
+
 import java.util.List;
 
 
@@ -61,6 +64,20 @@ public class ItemListActivity extends AppCompatActivity implements ItemListAdapt
     // Implement ItemListAdapter.OnItemClickListener
     @Override
     public void onItemClick(ItemInfoModel data) {
+        startDetailActivity(data.getId());
+    }
 
+    // Start item detail activity
+    private void startDetailActivity(String itemId) {
+
+        // set bundle
+        Bundle bundle = new Bundle();
+        bundle.putString(Constants.BUNDLE_KEY_ITEM_ID, itemId);
+
+        // set intent
+        Intent intent = new Intent(ItemListActivity.this, ItemDetailActivity.class);
+        intent.putExtras(bundle);
+
+        startActivity(intent);
     }
 }
