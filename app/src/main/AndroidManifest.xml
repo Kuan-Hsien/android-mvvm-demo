@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
 
 
-        <activity android:name=".MainActivity"
+        <activity android:name=".ui.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ItemDetailActivity"
+        <activity android:name=".ui.ItemDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>

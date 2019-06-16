@@ -1,4 +1,4 @@
-package com.kuanhsien.app.sample.android_mvvm_demo;
+package com.kuanhsien.app.sample.android_mvvm_demo.ui;
 
 import android.content.Context;
 
