@@ -1,4 +1,4 @@
-package com.kuanhsien.app.sample.android_mvvm_demo;
+package com.kuanhsien.app.sample.android_mvvm_demo.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.kuanhsien.app.sample.android_mvvm_demo.R;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemInfoModel;
 import com.kuanhsien.app.sample.android_mvvm_demo.utils.Constants;
 
@@ -31,7 +32,8 @@ public class ItemDetailActivity extends AppCompatActivity {
         final TextView tvDesc = findViewById(R.id.tv_item_detail_desc);
         //ImageView ivImage = findViewById(R.id.iv_item_detail_image);
 
-        // 2. observe livedata (create livedata first, or will encounter NullPointerException)
+        // 2. prepare viewModel and observe livedata
+        // (create livedata first, or will encounter NullPointerException)
         mViewModel.getItemInfo().observe(this, new Observer<ItemInfoModel>() {
             @Override
             public void onChanged(ItemInfoModel itemInfo) {
@@ -42,18 +44,19 @@ public class ItemDetailActivity extends AppCompatActivity {
                 // ivImage.setBackgroundResource(itemInfo.getImageRes());
             }
         });
+        mViewModel.setRepository(this);
 
         // 3. get data and setup view
         // get value from bundle
         String itemId;
         Bundle bundle = getIntent().getExtras();
         if(bundle != null) {
-            itemId = bundle.getString(Constants.BundleKeyItemId);
+            itemId = bundle.getString(Constants.BUNDLE_KEY_ITEM_ID);
         } else {
             itemId = "";
         }
 
-        // use viewModel to get data from model
+        // 4. use viewModel to get data from model
         mViewModel.prepareData(itemId);
     }
 }

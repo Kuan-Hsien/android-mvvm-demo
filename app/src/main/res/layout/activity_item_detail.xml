@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ItemDetailActivity">
+    tools:context=".ui.ItemDetailActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_item_detail_image"
