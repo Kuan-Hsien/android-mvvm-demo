@@ -22,6 +22,7 @@ class ItemDetailViewModel extends ViewModel {
         mRepository = repository;
     }
 
+
     // LiveData
     private MutableLiveData<ItemInfoModel> mItemInfo;
 
@@ -31,6 +32,7 @@ class ItemDetailViewModel extends ViewModel {
         }
         return mItemInfo;
     }
+
 
     // fun
     void prepareData(String itemId) {
