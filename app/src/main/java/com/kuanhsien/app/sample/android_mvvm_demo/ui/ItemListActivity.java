@@ -4,6 +4,9 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.kuanhsien.app.sample.android_mvvm_demo.R;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemInfoModel;
 import java.util.List;
@@ -12,6 +15,7 @@ import java.util.List;
 public class ItemListActivity extends AppCompatActivity {
 
     private ItemListViewModel mViewModel;
+    private ItemListAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,11 @@ public class ItemListActivity extends AppCompatActivity {
     }
 
     private void initRecyclerview() {
-        // TODO: init recyclerview
+
+        RecyclerView recyclerView = findViewById(R.id.recyclerview_item_list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        mAdapter = new ItemListAdapter();
+        recyclerView.setAdapter(mAdapter);
     }
 }
