@@ -2,13 +2,11 @@ package com.kuanhsien.app.sample.android_mvvm_demo.ui;
 
 import android.content.Context;
 import android.os.AsyncTask;
-
-import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemInfoModel;
-import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemRepository;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemInfoModel;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemRepository;
 
 class ItemDetailViewModel extends ViewModel {
 
