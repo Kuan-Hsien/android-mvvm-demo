@@ -3,14 +3,15 @@ package com.kuanhsien.app.sample.android_mvvm_demo.ui;
 import android.content.Context;
 import android.os.AsyncTask;
 
-import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemInfoModel;
-import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemRepository;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemInfoModel;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemRepository;
+import java.util.List;
 
-class ItemDetailViewModel extends ViewModel {
+
+public class ItemListViewModel extends ViewModel {
 
     // Repository
     private ItemRepository mRepository;
@@ -25,24 +26,23 @@ class ItemDetailViewModel extends ViewModel {
 
 
     // LiveData
-    private MutableLiveData<ItemInfoModel> mItemInfo;
+    private MutableLiveData<List<ItemInfoModel>> mDataList;
 
-    LiveData<ItemInfoModel> getItemInfo() {
-        if (mItemInfo == null) {
-            mItemInfo = new MutableLiveData<>();
+    LiveData<List<ItemInfoModel>> getItemList() {
+        if (mDataList == null) {
+            mDataList = new MutableLiveData<>();
         }
-        return mItemInfo;
+        return mDataList;
     }
 
 
     // fun
-    void prepareData(final String itemId) {
+    void prepareData() {
 
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
-
-                mItemInfo.postValue(mRepository.getItemInfo(itemId));
+                mDataList.postValue(mRepository.getItemInfoList());
             }
         });
     }

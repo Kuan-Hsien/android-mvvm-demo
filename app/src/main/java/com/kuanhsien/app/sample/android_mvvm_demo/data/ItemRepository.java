@@ -16,7 +16,7 @@ public class ItemRepository {
     }
 
     // query and mutate data
-    public  List<ItemInfoModel> getItemInfoList() {
+    public List<ItemInfoModel> getItemInfoList() {
         return mItemInfoDao.getItemInfoList();
     }
 
