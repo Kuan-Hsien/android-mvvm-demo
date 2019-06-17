@@ -10,7 +10,7 @@ import com.kuanhsien.app.sample.android_mvvm_demo.data.InfoRepository;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.observable.ObservableInfoModel;
 
 
-public class InfoViewModel extends ViewModel {
+public class InfoViewModel {
 
     // Repository
     private InfoRepository mRepository;

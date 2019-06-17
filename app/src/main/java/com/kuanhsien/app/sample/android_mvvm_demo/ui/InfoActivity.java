@@ -21,7 +21,7 @@ public class InfoActivity extends AppCompatActivity implements IObserver {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-        mViewModel = ViewModelProviders.of(this).get(InfoViewModel.class);
+        mViewModel = new InfoViewModel();
 
         setupView();
     }
