@@ -1,8 +1,11 @@
 package com.kuanhsien.app.sample.android_mvvm_demo.data;
 
+import com.kuanhsien.app.sample.android_mvvm_demo.R;
+
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "info_table")    // table-name (case-sensitive)
@@ -61,7 +64,23 @@ public class InfoModel {
 
 
     // Constructors
-    public InfoModel(String id, String title, String desc, int imageRes) {
+    @Ignore
+    public InfoModel() {
+        mId = "";
+        mTitle = "";
+        mDesc = "";
+        mImageRes = R.drawable.img_placeholder;
+    }
+
+    @Ignore
+    public InfoModel(@NonNull String id, @NonNull String title, @NonNull String desc) {
+        mId = id;
+        mTitle = title;
+        mDesc = desc;
+        mImageRes = R.drawable.img_placeholder;
+    }
+
+    public InfoModel(@NonNull String id, @NonNull String title, @NonNull String desc, int imageRes) {
         mId = id;
         mTitle = title;
         mDesc = desc;

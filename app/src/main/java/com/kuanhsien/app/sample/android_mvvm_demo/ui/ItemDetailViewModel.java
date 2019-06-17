@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemInfoModel;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemRepository;
 
-class ItemDetailViewModel extends ViewModel {
+public class ItemDetailViewModel extends ViewModel {
 
     // Repository
     private ItemRepository mRepository;

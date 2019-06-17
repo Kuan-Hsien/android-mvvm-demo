@@ -1,6 +1,7 @@
 package com.kuanhsien.app.sample.android_mvvm_demo.ui;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -29,7 +30,7 @@ public class ItemDetailActivity extends AppCompatActivity {
         // 1. get view component
         final TextView tvTitle = findViewById(R.id.tv_item_detail_title);
         final TextView tvDesc = findViewById(R.id.tv_item_detail_desc);
-        //ImageView ivImage = findViewById(R.id.iv_item_detail_image);
+        final ImageView ivImage = findViewById(R.id.iv_item_detail_image);
 
         // 2. prepare viewModel and observe livedata
         // (create livedata first, or will encounter NullPointerException)
@@ -40,7 +41,7 @@ public class ItemDetailActivity extends AppCompatActivity {
                 // set view
                 tvTitle.setText(itemInfo.getTitle());
                 tvDesc.setText(itemInfo.getDesc());
-                // ivImage.setBackgroundResource(itemInfo.getImageRes());
+                ivImage.setBackgroundResource(itemInfo.getImageRes());
             }
         });
         mViewModel.setRepository(this);

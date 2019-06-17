@@ -1,8 +1,11 @@
 package com.kuanhsien.app.sample.android_mvvm_demo.data;
 
+import com.kuanhsien.app.sample.android_mvvm_demo.R;
+
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 
@@ -62,7 +65,23 @@ public class ItemInfoModel {
 
 
     // Constructors
-    public ItemInfoModel(String id, String title, String desc, int imageRes) {
+    @Ignore
+    public ItemInfoModel() {
+        mId = "";
+        mTitle = "";
+        mDesc = "";
+        mImageRes = R.drawable.img_placeholder;
+    }
+
+    @Ignore
+    public ItemInfoModel(@NonNull String id, @NonNull String title, @NonNull String desc) {
+        mId = id;
+        mTitle = title;
+        mDesc = desc;
+        mImageRes = R.drawable.img_placeholder;
+    }
+
+    public ItemInfoModel(@NonNull String id, @NonNull String title, @NonNull String desc, int imageRes) {
         mId = id;
         mTitle = title;
         mDesc = desc;

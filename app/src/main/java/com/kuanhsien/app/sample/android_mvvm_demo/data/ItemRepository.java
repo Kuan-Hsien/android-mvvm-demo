@@ -43,9 +43,9 @@ public class ItemRepository {
             @Override
             public void run() {
                 insertItemAll(
-                        new ItemInfoModel("A", "A" , "Desc", 0),
-                        new ItemInfoModel("B", "B" , "Desc", 0),
-                        new ItemInfoModel("C", "C" , "Desc", 0)
+                        new ItemInfoModel("A", "A" , "Desc"),
+                        new ItemInfoModel("B", "B" , "Desc"),
+                        new ItemInfoModel("C", "C" , "Desc")
                 );
             }
         });
