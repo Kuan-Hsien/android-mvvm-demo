@@ -9,9 +9,10 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.kuanhsien.app.sample.android_mvvm_demo.R;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.InfoModel;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.observable.IObserver;
 
 
-public class InfoActivity extends AppCompatActivity {
+public class InfoActivity extends AppCompatActivity implements IObserver {
 
     private InfoViewModel mViewModel;
 
@@ -27,27 +28,38 @@ public class InfoActivity extends AppCompatActivity {
 
     private void setupView() {
 
-        // 1. get view component
-        final TextView tvTitle = findViewById(R.id.tv_info_title);
-        final TextView tvDesc = findViewById(R.id.tv_info_desc);
-        final ImageView ivImage = findViewById(R.id.iv_info_image);
-
-
-        // 2. prepare viewModel and observe livedata
-        // (create livedata first, or will encounter NullPointerException)
-        mViewModel.getInfo().observe(this, new Observer<InfoModel>() {
-            @Override
-            public void onChanged(InfoModel data) {
-
-                // set view
-                tvTitle.setText(data.getTitle());
-                tvDesc.setText(data.getDesc());
-                // ivImage.setBackgroundResource(data.getImageRes());
-            }
-        });
+        // 1. prepare viewModel and observe observable
+        mViewModel.getInfo().registerObserver(this);
         mViewModel.setRepository(this);
 
-        // 3. use viewModel to get data from model
+        // 2. use viewModel to get data from model
         mViewModel.prepareData("Author");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        // 3. remove register
+        mViewModel.getInfo().removeObserver(this);
+    }
+
+
+    // Implement IObserver to update UI while observable updated
+    @Override
+    public void update() {
+
+        // 1. get view component
+        TextView tvTitle = findViewById(R.id.tv_info_title);
+        TextView tvDesc = findViewById(R.id.tv_info_desc);
+        ImageView ivImage = findViewById(R.id.iv_info_image);
+
+        // 2. get Observable
+        InfoModel data = mViewModel.getInfo().getValue();
+
+        // 3. update view
+        tvTitle.setText(data.getTitle());
+        tvDesc.setText(data.getDesc());
+        ivImage.setBackgroundResource(data.getImageRes());
     }
 }

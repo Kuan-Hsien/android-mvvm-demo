@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.InfoModel;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.InfoRepository;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.observable.ObservableInfoModel;
 
 
 public class InfoViewModel extends ViewModel {
@@ -23,16 +24,14 @@ public class InfoViewModel extends ViewModel {
     }
 
 
-    // LiveData
-    private MutableLiveData<InfoModel> mInfo;
-
-    LiveData<InfoModel> getInfo() {
+    // Self-implemented observer-pattern
+    private ObservableInfoModel mInfo;
+    ObservableInfoModel getInfo() {
         if (mInfo == null) {
-            mInfo = new MutableLiveData<>();
+            mInfo = new ObservableInfoModel(new InfoModel());
         }
         return mInfo;
     }
-
 
     // fun
     void prepareData(final String itemId) {
@@ -41,7 +40,7 @@ public class InfoViewModel extends ViewModel {
             @Override
             public void run() {
 
-                mInfo.postValue(mRepository.getInfo(itemId));
+                mInfo.setValue(mRepository.getInfo(itemId));
             }
         });
     }
