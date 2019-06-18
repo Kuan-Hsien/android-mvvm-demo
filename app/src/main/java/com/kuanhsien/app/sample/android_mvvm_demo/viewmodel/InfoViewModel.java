@@ -1,9 +1,9 @@
-package com.kuanhsien.app.sample.android_mvvm_demo.ui;
+package com.kuanhsien.app.sample.android_mvvm_demo.viewmodel;
 
 import android.content.Context;
 import androidx.lifecycle.Observer;
-import com.kuanhsien.app.sample.android_mvvm_demo.data.InfoModel;
-import com.kuanhsien.app.sample.android_mvvm_demo.data.InfoRepository;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.model.InfoModel;
+import com.kuanhsien.app.sample.android_mvvm_demo.repository.InfoRepository;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.observable.ObservableInfoModel;
 
 
@@ -24,7 +24,7 @@ public class InfoViewModel {
     // [Notify View-Layer observers]
     // Self-implemented observer-pattern
     private ObservableInfoModel mInfo;
-    ObservableInfoModel getInfo() {
+    public ObservableInfoModel getInfo() {
         if (mInfo == null) {
             mInfo = new ObservableInfoModel(new InfoModel());
         }

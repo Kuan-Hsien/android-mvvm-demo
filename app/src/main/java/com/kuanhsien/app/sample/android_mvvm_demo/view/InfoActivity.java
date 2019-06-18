@@ -1,13 +1,14 @@
-package com.kuanhsien.app.sample.android_mvvm_demo.ui;
+package com.kuanhsien.app.sample.android_mvvm_demo.view;
 
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.kuanhsien.app.sample.android_mvvm_demo.R;
-import com.kuanhsien.app.sample.android_mvvm_demo.data.DemoConstants;
-import com.kuanhsien.app.sample.android_mvvm_demo.data.InfoModel;
+import com.kuanhsien.app.sample.android_mvvm_demo.base.DemoConstants;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.model.InfoModel;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.observable.IObserver;
+import com.kuanhsien.app.sample.android_mvvm_demo.viewmodel.InfoViewModel;
 
 
 public class InfoActivity extends AppCompatActivity implements IObserver {

@@ -1,4 +1,4 @@
-package com.kuanhsien.app.sample.android_mvvm_demo.data;
+package com.kuanhsien.app.sample.android_mvvm_demo.data.model;
 
 import com.kuanhsien.app.sample.android_mvvm_demo.R;
 
@@ -8,8 +8,9 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "info_table")    // table-name (case-sensitive)
-public class InfoModel {
+
+@Entity(tableName = "item_info_table")    // table-name (case-sensitive)
+public class ItemInfoModel {
 
     @PrimaryKey
     @NonNull
@@ -65,7 +66,7 @@ public class InfoModel {
 
     // Constructors
     @Ignore
-    public InfoModel() {
+    public ItemInfoModel() {
         mId = "";
         mTitle = "";
         mDesc = "";
@@ -73,14 +74,14 @@ public class InfoModel {
     }
 
     @Ignore
-    public InfoModel(@NonNull String id, @NonNull String title, @NonNull String desc) {
+    public ItemInfoModel(@NonNull String id, @NonNull String title, @NonNull String desc) {
         mId = id;
         mTitle = title;
         mDesc = desc;
         mImageRes = R.drawable.img_placeholder;
     }
 
-    public InfoModel(@NonNull String id, @NonNull String title, @NonNull String desc, int imageRes) {
+    public ItemInfoModel(@NonNull String id, @NonNull String title, @NonNull String desc, int imageRes) {
         mId = id;
         mTitle = title;
         mDesc = desc;

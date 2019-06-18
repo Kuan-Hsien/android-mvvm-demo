@@ -1,6 +1,11 @@
-package com.kuanhsien.app.sample.android_mvvm_demo.data;
+package com.kuanhsien.app.sample.android_mvvm_demo.repository;
 
 import android.content.Context;
+
+import com.kuanhsien.app.sample.android_mvvm_demo.data.database.AppDatabase;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.database.InfoDao;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.model.InfoModel;
+
 import java.util.List;
 import androidx.lifecycle.LiveData;
 

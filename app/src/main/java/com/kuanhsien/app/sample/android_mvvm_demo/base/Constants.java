@@ -1,4 +1,4 @@
-package com.kuanhsien.app.sample.android_mvvm_demo.utils;
+package com.kuanhsien.app.sample.android_mvvm_demo.base;
 
 public class Constants {
 

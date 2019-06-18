@@ -1,4 +1,4 @@
-package com.kuanhsien.app.sample.android_mvvm_demo.ui;
+package com.kuanhsien.app.sample.android_mvvm_demo.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,10 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.kuanhsien.app.sample.android_mvvm_demo.R;
-import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemInfoModel;
-import com.kuanhsien.app.sample.android_mvvm_demo.utils.Constants;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.model.ItemInfoModel;
+import com.kuanhsien.app.sample.android_mvvm_demo.base.Constants;
+import com.kuanhsien.app.sample.android_mvvm_demo.viewmodel.ItemListViewModel;
+
 import java.util.List;
 
 

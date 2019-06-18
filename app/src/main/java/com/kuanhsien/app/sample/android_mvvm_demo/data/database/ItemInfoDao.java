@@ -1,4 +1,6 @@
-package com.kuanhsien.app.sample.android_mvvm_demo.data;
+package com.kuanhsien.app.sample.android_mvvm_demo.data.database;
+
+import com.kuanhsien.app.sample.android_mvvm_demo.data.model.ItemInfoModel;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;

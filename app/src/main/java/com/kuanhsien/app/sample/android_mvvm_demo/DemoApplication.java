@@ -2,8 +2,8 @@ package com.kuanhsien.app.sample.android_mvvm_demo;
 
 import android.app.Application;
 import android.content.Context;
-import com.kuanhsien.app.sample.android_mvvm_demo.data.DemoRepository;
-import com.kuanhsien.app.sample.android_mvvm_demo.utils.Constants;
+import com.kuanhsien.app.sample.android_mvvm_demo.repository.DemoRepository;
+import com.kuanhsien.app.sample.android_mvvm_demo.base.Constants;
 
 public class DemoApplication extends Application {
 

@@ -1,12 +1,12 @@
-package com.kuanhsien.app.sample.android_mvvm_demo.ui;
+package com.kuanhsien.app.sample.android_mvvm_demo.viewmodel;
 
 import android.content.Context;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
-import com.kuanhsien.app.sample.android_mvvm_demo.data.InfoModel;
-import com.kuanhsien.app.sample.android_mvvm_demo.data.InfoRepository;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.model.InfoModel;
+import com.kuanhsien.app.sample.android_mvvm_demo.repository.InfoRepository;
 
 public class MainViewModel extends ViewModel {
 

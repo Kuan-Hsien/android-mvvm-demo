@@ -1,7 +1,14 @@
-package com.kuanhsien.app.sample.android_mvvm_demo.data;
+package com.kuanhsien.app.sample.android_mvvm_demo.repository;
 
 import android.content.Context;
 import android.os.AsyncTask;
+
+import com.kuanhsien.app.sample.android_mvvm_demo.base.DemoConstants;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.database.AppDatabase;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.database.InfoDao;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.database.ItemInfoDao;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.model.InfoModel;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.model.ItemInfoModel;
 
 
 public class DemoRepository {

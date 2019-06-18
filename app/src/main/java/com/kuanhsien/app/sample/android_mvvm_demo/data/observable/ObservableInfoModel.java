@@ -1,6 +1,6 @@
 package com.kuanhsien.app.sample.android_mvvm_demo.data.observable;
 
-import com.kuanhsien.app.sample.android_mvvm_demo.data.InfoModel;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.model.InfoModel;
 
 public class ObservableInfoModel extends ObservableData {
 
