@@ -1,10 +1,13 @@
-package com.kuanhsien.app.sample.android_mvvm_demo.data;
+package com.kuanhsien.app.sample.android_mvvm_demo.data.database;
 
 import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-import com.kuanhsien.app.sample.android_mvvm_demo.utils.Constants;
+
+import com.kuanhsien.app.sample.android_mvvm_demo.data.model.InfoModel;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.model.ItemInfoModel;
+import com.kuanhsien.app.sample.android_mvvm_demo.base.Constants;
 
 @Database(entities = {
         ItemInfoModel.class,

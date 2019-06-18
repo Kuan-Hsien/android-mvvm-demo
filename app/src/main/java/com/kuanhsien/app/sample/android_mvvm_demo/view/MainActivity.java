@@ -1,4 +1,4 @@
-package com.kuanhsien.app.sample.android_mvvm_demo.ui;
+package com.kuanhsien.app.sample.android_mvvm_demo.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,8 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProviders;
 import com.kuanhsien.app.sample.android_mvvm_demo.R;
-import com.kuanhsien.app.sample.android_mvvm_demo.data.DemoConstants;
+import com.kuanhsien.app.sample.android_mvvm_demo.base.DemoConstants;
 import com.kuanhsien.app.sample.android_mvvm_demo.databinding.ActivityMainBinding;
+import com.kuanhsien.app.sample.android_mvvm_demo.viewmodel.MainViewModel;
 
 
 public class MainActivity extends AppCompatActivity {

@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme">
 
 
-        <activity android:name=".ui.LaunchActivity"
+        <activity android:name=".view.LaunchActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -23,22 +23,22 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.MainActivity"
+        <activity android:name=".view.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait">
         </activity>
 
-        <activity android:name=".ui.ItemListActivity"
+        <activity android:name=".view.ItemListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>
 
-        <activity android:name=".ui.ItemDetailActivity"
+        <activity android:name=".view.ItemDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>
 
-        <activity android:name=".ui.InfoActivity"
+        <activity android:name=".view.InfoActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>

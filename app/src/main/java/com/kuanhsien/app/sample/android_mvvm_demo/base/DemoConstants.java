@@ -1,4 +1,4 @@
-package com.kuanhsien.app.sample.android_mvvm_demo.data;
+package com.kuanhsien.app.sample.android_mvvm_demo.base;
 
 public class DemoConstants {
 

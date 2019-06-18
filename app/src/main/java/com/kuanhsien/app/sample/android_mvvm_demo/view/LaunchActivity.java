@@ -1,4 +1,4 @@
-package com.kuanhsien.app.sample.android_mvvm_demo.ui;
+package com.kuanhsien.app.sample.android_mvvm_demo.view;
 
 import android.content.Intent;
 import android.os.Bundle;

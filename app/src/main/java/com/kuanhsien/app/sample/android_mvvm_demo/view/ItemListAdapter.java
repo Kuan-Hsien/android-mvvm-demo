@@ -1,4 +1,4 @@
-package com.kuanhsien.app.sample.android_mvvm_demo.ui;
+package com.kuanhsien.app.sample.android_mvvm_demo.view;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,7 +7,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.kuanhsien.app.sample.android_mvvm_demo.R;
-import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemInfoModel;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.model.ItemInfoModel;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.kuanhsien.app.sample.android_mvvm_demo.ui;
+package com.kuanhsien.app.sample.android_mvvm_demo.view;
 
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -7,8 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import com.kuanhsien.app.sample.android_mvvm_demo.R;
-import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemInfoModel;
-import com.kuanhsien.app.sample.android_mvvm_demo.utils.Constants;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.model.ItemInfoModel;
+import com.kuanhsien.app.sample.android_mvvm_demo.base.Constants;
+import com.kuanhsien.app.sample.android_mvvm_demo.viewmodel.ItemDetailViewModel;
 
 
 public class ItemDetailActivity extends AppCompatActivity {
