@@ -24,7 +24,7 @@ public class DemoApplication extends Application {
         // (1) prepare default data
         prepareDatabase();
 
-        // (2) greeting page & tips
+        // (2) show tips
         // TODO
 
         // (3) once login, save is_first_flag = false into shared-preferences
