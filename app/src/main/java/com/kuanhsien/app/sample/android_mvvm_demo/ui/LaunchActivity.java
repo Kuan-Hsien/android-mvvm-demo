@@ -28,6 +28,6 @@ public class LaunchActivity extends AppCompatActivity {
                 startActivity(new Intent(LaunchActivity.this, MainActivity.class));
                 finish();
             }
-        }, 5000);    // 5 seconds
+        }, 3000);
     }
 }

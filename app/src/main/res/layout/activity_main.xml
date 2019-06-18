@@ -7,8 +7,6 @@
     <data>
         <variable name="viewModel"
             type="com.kuanhsien.app.sample.android_mvvm_demo.ui.MainViewModel"/>
-        <variable name="info"
-            type="com.kuanhsien.app.sample.android_mvvm_demo.data.InfoModel"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

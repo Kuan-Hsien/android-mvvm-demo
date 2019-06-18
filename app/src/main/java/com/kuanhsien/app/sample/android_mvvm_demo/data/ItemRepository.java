@@ -5,6 +5,8 @@ import android.os.AsyncTask;
 
 import java.util.List;
 
+import androidx.lifecycle.LiveData;
+
 public class ItemRepository {
 
     private ItemInfoDao mItemInfoDao;
@@ -16,11 +18,11 @@ public class ItemRepository {
     }
 
     // query and mutate data
-    public List<ItemInfoModel> getItemInfoList() {
+    public LiveData<List<ItemInfoModel>> getItemInfoList() {
         return mItemInfoDao.getItemInfoList();
     }
 
-    public ItemInfoModel getItemInfo(String itemId) {
+    public LiveData<ItemInfoModel> getItemInfo(String itemId) {
         return mItemInfoDao.getItemInfo(itemId);
     }
 

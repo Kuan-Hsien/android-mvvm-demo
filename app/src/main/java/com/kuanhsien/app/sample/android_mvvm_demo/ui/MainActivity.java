@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
         // DataBinding
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        binding.setViewModel(mViewModel);
+        binding.setViewModel(mViewModel);   // set variables in xml
+        binding.setLifecycleOwner(this);    // set lifecycle owner for Livedata in xml
     }
 
     @Override
