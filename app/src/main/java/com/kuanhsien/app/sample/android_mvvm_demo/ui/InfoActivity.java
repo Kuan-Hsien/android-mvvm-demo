@@ -22,6 +22,7 @@ public class InfoActivity extends AppCompatActivity implements IObserver {
         setContentView(R.layout.activity_info);
 
         mViewModel = new InfoViewModel();
+        mViewModel.setRepository(this);
 
         setupView();
     }
@@ -30,7 +31,6 @@ public class InfoActivity extends AppCompatActivity implements IObserver {
 
         // 1. prepare viewModel and observe observable
         mViewModel.getInfo().registerObserver(this);
-        mViewModel.setRepository(this);
 
         // 2. use viewModel to get data from model
         mViewModel.prepareData("Author");

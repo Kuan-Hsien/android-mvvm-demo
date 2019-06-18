@@ -1,12 +1,13 @@
 package com.kuanhsien.app.sample.android_mvvm_demo.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProviders;
 import com.kuanhsien.app.sample.android_mvvm_demo.R;
+import com.kuanhsien.app.sample.android_mvvm_demo.databinding.ActivityMainBinding;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -16,40 +17,28 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
+        // ViewModel
         mViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        mViewModel.setRepository(this);
 
-        setupView();
+        // DataBinding
+        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        binding.setViewModel(mViewModel);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
 
-        mViewModel.prepareData();
+        mViewModel.prepareData("Cover");
     }
 
-    // setup view in onCreate
-    private void setupView() {
+    public void startItemListActivity(View view) {
+        startActivity(new Intent(MainActivity.this, ItemListActivity.class));
+    }
 
-        // 1. get view component
-        final Button btnA = findViewById(R.id.btn_a);
-        final Button btnB = findViewById(R.id.btn_b);
-
-        btnA.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, ItemListActivity.class));
-            }
-        });
-
-        btnB.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, InfoActivity.class));
-            }
-        });
-
-        // 2. prepare viewModel
-        mViewModel.setRepository(this);
+    public void startInfoActivity(View view) {
+        startActivity(new Intent(MainActivity.this, InfoActivity.class));
     }
 }

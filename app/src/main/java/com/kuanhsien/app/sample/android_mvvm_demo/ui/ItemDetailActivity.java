@@ -21,6 +21,7 @@ public class ItemDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_item_detail);
 
         mViewModel = ViewModelProviders.of(this).get(ItemDetailViewModel.class);
+        mViewModel.setRepository(this);
 
         setupView();
     }
@@ -36,15 +37,14 @@ public class ItemDetailActivity extends AppCompatActivity {
         // (create livedata first, or will encounter NullPointerException)
         mViewModel.getItemInfo().observe(this, new Observer<ItemInfoModel>() {
             @Override
-            public void onChanged(ItemInfoModel itemInfo) {
+            public void onChanged(ItemInfoModel data) {
 
                 // set view
-                tvTitle.setText(itemInfo.getTitle());
-                tvDesc.setText(itemInfo.getDesc());
-                ivImage.setBackgroundResource(itemInfo.getImageRes());
+                tvTitle.setText(data.getTitle());
+                tvDesc.setText(data.getDesc());
+                ivImage.setBackgroundResource(data.getImageRes());
             }
         });
-        mViewModel.setRepository(this);
 
         // 3. get data and setup view
         // get value from bundle

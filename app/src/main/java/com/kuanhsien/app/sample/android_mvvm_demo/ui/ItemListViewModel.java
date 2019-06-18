@@ -15,11 +15,11 @@ public class ItemListViewModel extends ViewModel {
     // Repository
     private ItemRepository mRepository;
 
-    void setRepository(Context context) {
+    public void setRepository(Context context) {
         mRepository = new ItemRepository(context);
     }
 
-    void setRepository(ItemRepository repository) {
+    public void setRepository(ItemRepository repository) {
         mRepository = repository;
     }
 
@@ -27,7 +27,7 @@ public class ItemListViewModel extends ViewModel {
     // LiveData
     private MutableLiveData<List<ItemInfoModel>> mDataList;
 
-    LiveData<List<ItemInfoModel>> getItemList() {
+    public LiveData<List<ItemInfoModel>> getItemList() {
         if (mDataList == null) {
             mDataList = new MutableLiveData<>();
         }
@@ -36,7 +36,7 @@ public class ItemListViewModel extends ViewModel {
 
 
     // fun
-    void prepareData() {
+    public void prepareData() {
 
         AsyncTask.execute(new Runnable() {
             @Override

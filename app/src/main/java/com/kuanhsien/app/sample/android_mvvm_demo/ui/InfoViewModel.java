@@ -15,11 +15,11 @@ public class InfoViewModel {
     // Repository
     private InfoRepository mRepository;
 
-    void setRepository(Context context) {
+    public void setRepository(Context context) {
         mRepository = new InfoRepository(context);
     }
 
-    void setRepository(InfoRepository repository) {
+    public void setRepository(InfoRepository repository) {
         mRepository = repository;
     }
 
@@ -34,7 +34,7 @@ public class InfoViewModel {
     }
 
     // fun
-    void prepareData(final String itemId) {
+    public void prepareData(final String itemId) {
 
         AsyncTask.execute(new Runnable() {
             @Override
