@@ -1,10 +1,7 @@
 package com.kuanhsien.app.sample.android_mvvm_demo.data;
 
 import android.content.Context;
-import android.os.AsyncTask;
-
 import java.util.List;
-
 import androidx.lifecycle.LiveData;
 
 public class ItemRepository {
@@ -37,20 +34,4 @@ public class ItemRepository {
     public void deleteItem(ItemInfoModel item) {
         mItemInfoDao.deleteItem(item);
     }
-
-
-    public void prepareTestItem() {
-        AsyncTask.execute(new Runnable() {
-
-            @Override
-            public void run() {
-                insertItemAll(
-                        new ItemInfoModel("A", "A" , "Desc"),
-                        new ItemInfoModel("B", "B" , "Desc"),
-                        new ItemInfoModel("C", "C" , "Desc")
-                );
-            }
-        });
-    }
-
 }

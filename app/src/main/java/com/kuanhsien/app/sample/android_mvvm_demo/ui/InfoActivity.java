@@ -5,6 +5,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.kuanhsien.app.sample.android_mvvm_demo.R;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.DemoConstants;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.InfoModel;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.observable.IObserver;
 
@@ -30,7 +31,7 @@ public class InfoActivity extends AppCompatActivity implements IObserver {
         mViewModel.getInfo().registerObserver(this);
 
         // 2. use viewModel to get data from model
-        mViewModel.prepareData("Author");
+        mViewModel.prepareData(DemoConstants.AUTHOR);
     }
 
     @Override

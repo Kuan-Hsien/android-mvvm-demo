@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProviders;
 import com.kuanhsien.app.sample.android_mvvm_demo.R;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.DemoConstants;
 import com.kuanhsien.app.sample.android_mvvm_demo.databinding.ActivityMainBinding;
 
 
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        mViewModel.prepareData("Cover");
+        mViewModel.prepareData(DemoConstants.COVER);
     }
 
     public void startItemListActivity(View view) {

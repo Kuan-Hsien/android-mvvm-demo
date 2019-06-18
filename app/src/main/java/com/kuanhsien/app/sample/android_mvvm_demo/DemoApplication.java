@@ -2,8 +2,7 @@ package com.kuanhsien.app.sample.android_mvvm_demo;
 
 import android.app.Application;
 import android.content.Context;
-import com.kuanhsien.app.sample.android_mvvm_demo.data.InfoRepository;
-import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemRepository;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.DemoRepository;
 import com.kuanhsien.app.sample.android_mvvm_demo.utils.Constants;
 
 public class DemoApplication extends Application {
@@ -36,10 +35,7 @@ public class DemoApplication extends Application {
 
     private void prepareDatabase() {
 
-        InfoRepository infoRepository = new InfoRepository(this);
-        ItemRepository itemRepository = new ItemRepository(this);
-
-        infoRepository.prepareTestInfo();
-        itemRepository.prepareTestItem();
+        DemoRepository repository = new DemoRepository(this);
+        repository.prepareData();
     }
 }
