@@ -1,10 +1,7 @@
 package com.kuanhsien.app.sample.android_mvvm_demo.ui;
 
 import android.content.Context;
-import android.os.AsyncTask;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.Observer;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.InfoModel;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.InfoRepository;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.observable.ObservableInfoModel;
@@ -24,6 +21,7 @@ public class InfoViewModel {
     }
 
 
+    // [Notify View-Layer observers]
     // Self-implemented observer-pattern
     private ObservableInfoModel mInfo;
     ObservableInfoModel getInfo() {
@@ -36,11 +34,11 @@ public class InfoViewModel {
     // fun
     public void prepareData(final String itemId) {
 
-        AsyncTask.execute(new Runnable() {
+        // [Get data from Model-Layer]
+        mRepository.getInfo(itemId).observeForever(new Observer<InfoModel>() {
             @Override
-            public void run() {
-
-                mInfo.setValue(mRepository.getInfo(itemId));
+            public void onChanged(InfoModel data) {
+                mInfo.setValue(data);
             }
         });
     }

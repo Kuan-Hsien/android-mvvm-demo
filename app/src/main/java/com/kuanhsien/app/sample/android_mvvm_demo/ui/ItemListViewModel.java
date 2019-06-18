@@ -1,9 +1,9 @@
 package com.kuanhsien.app.sample.android_mvvm_demo.ui;
 
 import android.content.Context;
-import android.os.AsyncTask;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemInfoModel;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.ItemRepository;
@@ -26,8 +26,7 @@ public class ItemListViewModel extends ViewModel {
 
     // LiveData
     private MutableLiveData<List<ItemInfoModel>> mDataList;
-
-    public LiveData<List<ItemInfoModel>> getItemList() {
+    public LiveData<List<ItemInfoModel>> getDataList() {
         if (mDataList == null) {
             mDataList = new MutableLiveData<>();
         }
@@ -38,10 +37,10 @@ public class ItemListViewModel extends ViewModel {
     // fun
     public void prepareData() {
 
-        AsyncTask.execute(new Runnable() {
+        mRepository.getItemInfoList().observeForever(new Observer<List<ItemInfoModel>>() {
             @Override
-            public void run() {
-                mDataList.postValue(mRepository.getItemInfoList());
+            public void onChanged(List<ItemInfoModel> dataList) {
+                mDataList.postValue(dataList);
             }
         });
     }

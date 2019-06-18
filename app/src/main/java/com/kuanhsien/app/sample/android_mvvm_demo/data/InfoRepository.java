@@ -1,8 +1,8 @@
 package com.kuanhsien.app.sample.android_mvvm_demo.data;
 
 import android.content.Context;
-import android.os.AsyncTask;
 import java.util.List;
+import androidx.lifecycle.LiveData;
 
 public class InfoRepository {
 
@@ -15,11 +15,11 @@ public class InfoRepository {
     }
 
     // query and mutate data
-    public List<InfoModel> getInfoList() {
+    public LiveData<List<InfoModel>> getInfoList() {
         return mInfoDao.getInfoList();
     }
 
-    public InfoModel getInfo(String infoId) {
+    public LiveData<InfoModel> getInfo(String infoId) {
         return mInfoDao.getInfo(infoId);
     }
 
@@ -34,19 +34,4 @@ public class InfoRepository {
     public void deleteInfo(InfoModel info) {
         mInfoDao.deleteInfo(info);
     }
-
-
-    public void prepareTestInfo() {
-        AsyncTask.execute(new Runnable() {
-
-            @Override
-            public void run() {
-                insertInfoAll(
-                        new InfoModel("Author", "A" , "Desc"),
-                        new InfoModel("Cover", "Cover-Title" , "Cover-Desc")
-                );
-            }
-        });
-    }
-
 }

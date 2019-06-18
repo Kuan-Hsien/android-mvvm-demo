@@ -15,7 +15,7 @@ import java.util.List;
 public class ItemListAdapter extends RecyclerView.Adapter {
 
     interface OnItemClickListener {
-        public void onItemClick(ItemInfoModel data);
+        void onItemClick(ItemInfoModel data);
     }
 
     private OnItemClickListener mListener;

@@ -1,5 +1,6 @@
 package com.kuanhsien.app.sample.android_mvvm_demo.data;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -14,10 +15,10 @@ import java.util.List;
 public interface InfoDao {
 
     @Query("SELECT * FROM info_table")
-    List<InfoModel> getInfoList();
+    LiveData<List<InfoModel>> getInfoList();
 
     @Query("SELECT * FROM info_table WHERE item_id = :itemId")
-    InfoModel getInfo(String itemId);
+    LiveData<InfoModel> getInfo(String itemId);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertInfoAll(InfoModel... items);
