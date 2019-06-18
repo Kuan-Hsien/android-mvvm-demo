@@ -24,6 +24,7 @@ public class ItemListActivity extends AppCompatActivity implements ItemListAdapt
         setContentView(R.layout.activity_item_list);
 
         mViewModel = ViewModelProviders.of(this).get(ItemListViewModel.class);
+        mViewModel.setRepository(this);
 
         setupView();
     }
@@ -36,13 +37,12 @@ public class ItemListActivity extends AppCompatActivity implements ItemListAdapt
         // 2. prepare viewModel and observe livedata
         mViewModel.getItemList().observe(this, new Observer<List<ItemInfoModel>>() {
             @Override
-            public void onChanged(List<ItemInfoModel> itemInfo) {
+            public void onChanged(List<ItemInfoModel> dataList) {
 
                 // set view
-                mAdapter.setData(itemInfo);
+                mAdapter.setData(dataList);
             }
         });
-        mViewModel.setRepository(this);
 
         // 3. use viewModel to get data from model
         mViewModel.prepareData();

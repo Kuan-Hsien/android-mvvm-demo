@@ -42,7 +42,8 @@ public class InfoRepository {
             @Override
             public void run() {
                 insertInfoAll(
-                        new InfoModel("Author", "A" , "Desc")
+                        new InfoModel("Author", "A" , "Desc"),
+                        new InfoModel("Cover", "Cover-Title" , "Cover-Desc")
                 );
             }
         });

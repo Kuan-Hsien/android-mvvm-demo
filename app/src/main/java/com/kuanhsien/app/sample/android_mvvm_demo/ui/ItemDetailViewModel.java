@@ -13,11 +13,11 @@ public class ItemDetailViewModel extends ViewModel {
     // Repository
     private ItemRepository mRepository;
 
-    void setRepository(Context context) {
+    public void setRepository(Context context) {
         mRepository = new ItemRepository(context);
     }
 
-    void setRepository(ItemRepository repository) {
+    public void setRepository(ItemRepository repository) {
         mRepository = repository;
     }
 
@@ -34,7 +34,7 @@ public class ItemDetailViewModel extends ViewModel {
 
 
     // fun
-    void prepareData(final String itemId) {
+    public void prepareData(final String itemId) {
 
         AsyncTask.execute(new Runnable() {
             @Override
