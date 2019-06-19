@@ -1,9 +1,10 @@
 package com.kuanhsien.app.sample.android_mvvm_demo.viewmodel;
 
 import android.content.Context;
+import androidx.arch.core.util.Function;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Observer;
+import androidx.lifecycle.Transformations;
 import androidx.lifecycle.ViewModel;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.model.ItemInfoModel;
 import com.kuanhsien.app.sample.android_mvvm_demo.repository.ItemRepository;
@@ -25,23 +26,18 @@ public class ItemListViewModel extends ViewModel {
 
 
     // LiveData
-    private MutableLiveData<List<ItemInfoModel>> mDataList;
-    public LiveData<List<ItemInfoModel>> getDataList() {
-        if (mDataList == null) {
-            mDataList = new MutableLiveData<>();
+    private MutableLiveData<Boolean> mStartQuery = new MutableLiveData<>();
+    public LiveData<List<ItemInfoModel>> dataList = Transformations.switchMap(mStartQuery, new Function<Boolean, LiveData<List<ItemInfoModel>>>() {
+        @Override
+        public LiveData<List<ItemInfoModel>> apply(Boolean input) {
+            return mRepository.getItemInfoList();
         }
-        return mDataList;
-    }
+    });
 
 
     // fun
     public void prepareData() {
 
-        mRepository.getItemInfoList().observeForever(new Observer<List<ItemInfoModel>>() {
-            @Override
-            public void onChanged(List<ItemInfoModel> dataList) {
-                mDataList.postValue(dataList);
-            }
-        });
+        mStartQuery.postValue(true);
     }
 }

@@ -32,7 +32,7 @@ public class InfoViewModel {
     }
 
     // fun
-    public void prepareData(final String itemId) {
+    public void prepareData(String itemId) {
 
         // [Get data from Model-Layer]
         mRepository.getInfo(itemId).observeForever(new Observer<InfoModel>() {

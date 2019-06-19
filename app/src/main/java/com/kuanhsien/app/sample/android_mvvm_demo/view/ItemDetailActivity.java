@@ -3,16 +3,16 @@ package com.kuanhsien.app.sample.android_mvvm_demo.view;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import com.kuanhsien.app.sample.android_mvvm_demo.R;
+import com.kuanhsien.app.sample.android_mvvm_demo.base.BaseActivity;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.model.ItemInfoModel;
 import com.kuanhsien.app.sample.android_mvvm_demo.base.Constants;
 import com.kuanhsien.app.sample.android_mvvm_demo.viewmodel.ItemDetailViewModel;
 
 
-public class ItemDetailActivity extends AppCompatActivity {
+public class ItemDetailActivity extends BaseActivity {
 
     private ItemDetailViewModel mViewModel;
 
@@ -36,7 +36,7 @@ public class ItemDetailActivity extends AppCompatActivity {
 
         // 2. prepare viewModel and observe livedata
         // (create livedata first, or will encounter NullPointerException)
-        mViewModel.getItemInfo().observe(this, new Observer<ItemInfoModel>() {
+        mViewModel.itemInfo.observe(this, new Observer<ItemInfoModel>() {
             @Override
             public void onChanged(ItemInfoModel data) {
 

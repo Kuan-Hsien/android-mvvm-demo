@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Android-mvvm-demo</string>
-    <string name="btn_start">START</string>
+
+    <string name="button_show_item_list">Item List</string>
+    <string name="button_show_information">Information</string>
+    <string name="msg_greeting">Hello World</string>
 </resources>
