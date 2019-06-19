@@ -2,12 +2,12 @@ package com.kuanhsien.app.sample.android_mvvm_demo.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.kuanhsien.app.sample.android_mvvm_demo.R;
+import com.kuanhsien.app.sample.android_mvvm_demo.base.BaseActivity;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.model.ItemInfoModel;
 import com.kuanhsien.app.sample.android_mvvm_demo.base.Constants;
 import com.kuanhsien.app.sample.android_mvvm_demo.viewmodel.ItemListViewModel;
@@ -15,7 +15,7 @@ import com.kuanhsien.app.sample.android_mvvm_demo.viewmodel.ItemListViewModel;
 import java.util.List;
 
 
-public class ItemListActivity extends AppCompatActivity implements ItemListAdapter.OnItemClickListener {
+public class ItemListActivity extends BaseActivity implements ItemListAdapter.OnItemClickListener {
 
     private ItemListViewModel mViewModel;
     private ItemListAdapter mAdapter;

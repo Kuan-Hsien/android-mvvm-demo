@@ -3,16 +3,16 @@ package com.kuanhsien.app.sample.android_mvvm_demo.view;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import com.kuanhsien.app.sample.android_mvvm_demo.R;
+import com.kuanhsien.app.sample.android_mvvm_demo.base.BaseActivity;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.model.ItemInfoModel;
 import com.kuanhsien.app.sample.android_mvvm_demo.base.Constants;
 import com.kuanhsien.app.sample.android_mvvm_demo.viewmodel.ItemDetailViewModel;
 
 
-public class ItemDetailActivity extends AppCompatActivity {
+public class ItemDetailActivity extends BaseActivity {
 
     private ItemDetailViewModel mViewModel;
 

@@ -3,16 +3,16 @@ package com.kuanhsien.app.sample.android_mvvm_demo.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProviders;
 import com.kuanhsien.app.sample.android_mvvm_demo.R;
+import com.kuanhsien.app.sample.android_mvvm_demo.base.BaseActivity;
 import com.kuanhsien.app.sample.android_mvvm_demo.base.DemoConstants;
 import com.kuanhsien.app.sample.android_mvvm_demo.databinding.ActivityMainBinding;
 import com.kuanhsien.app.sample.android_mvvm_demo.viewmodel.MainViewModel;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private MainViewModel mViewModel;
 
