@@ -37,7 +37,7 @@ public class ItemListActivity extends AppCompatActivity implements ItemListAdapt
         initRecyclerview();
 
         // 2. prepare viewModel and observe livedata
-        mViewModel.getDataList().observe(this, new Observer<List<ItemInfoModel>>() {
+        mViewModel.dataList.observe(this, new Observer<List<ItemInfoModel>>() {
             @Override
             public void onChanged(List<ItemInfoModel> dataList) {
 

@@ -36,7 +36,7 @@ public class ItemDetailActivity extends AppCompatActivity {
 
         // 2. prepare viewModel and observe livedata
         // (create livedata first, or will encounter NullPointerException)
-        mViewModel.getItemInfo().observe(this, new Observer<ItemInfoModel>() {
+        mViewModel.itemInfo.observe(this, new Observer<ItemInfoModel>() {
             @Override
             public void onChanged(ItemInfoModel data) {
 
