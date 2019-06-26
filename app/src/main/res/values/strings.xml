@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Android-mvvm-demo</string>
 
-    <string name="button_show_item_list">Item List</string>
-    <string name="button_show_information">Information</string>
-    <string name="msg_greeting">Hello World</string>
+    <string name="button_show_item_list">閱讀經典</string>
+    <string name="button_show_information">作者介紹</string>
+    <string name="msg_greeting">書讀得多，人自然就好看起來</string>
 </resources>

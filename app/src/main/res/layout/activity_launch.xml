@@ -5,20 +5,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img_background"
     tools:context=".view.LaunchActivity">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/iv_launch_image"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:src="@drawable/img_placeholder"
-        android:layout_marginStart="64dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="36dp"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_cover_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-medium"
+        android:textStyle="normal"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:text="@string/msg_greeting"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

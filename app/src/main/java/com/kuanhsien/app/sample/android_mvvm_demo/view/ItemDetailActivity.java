@@ -29,6 +29,8 @@ public class ItemDetailActivity extends BaseActivity {
 
     private void setupView() {
 
+        hideToolbar();
+
         // 1. get view component
         final TextView tvTitle = findViewById(R.id.tv_item_detail_title);
         final TextView tvDesc = findViewById(R.id.tv_item_detail_desc);

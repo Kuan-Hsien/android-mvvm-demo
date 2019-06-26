@@ -28,6 +28,8 @@ public class InfoActivity extends BaseActivity implements IObserver {
 
     private void setupView() {
 
+        hideToolbar();
+
         // 1. prepare viewModel and observe observable
         mViewModel.getInfo().registerObserver(this);
 

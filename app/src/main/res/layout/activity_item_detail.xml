@@ -5,8 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img_background"
     tools:context=".view.ItemDetailActivity">
 
+    <!--invisible-->
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_item_detail_image"
         android:layout_width="0dp"
@@ -15,6 +17,8 @@
         android:layout_marginStart="64dp"
         android:layout_marginEnd="64dp"
         android:layout_marginBottom="36dp"
+        android:scaleType="fitCenter"
+        android:visibility="gone"
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/tv_item_detail_title"
@@ -22,6 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         />
 
+    <!--invisible-->
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_item_detail_title"
         android:layout_width="wrap_content"
@@ -33,6 +38,7 @@
         android:textColor="@android:color/black"
         android:gravity="center"
         tools:text="Item Title"
+        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@+id/iv_item_detail_image"
         app:layout_constraintBottom_toTopOf="@+id/tv_item_detail_desc"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,10 +47,13 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_item_detail_desc"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
-        android:textSize="14sp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:textSize="16sp"
         android:fontFamily="sans-serif"
         android:textStyle="normal"
         android:textColor="@android:color/black"
@@ -56,10 +65,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         />
 
+    <!--invisible-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_item_detail_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         android:background="@android:color/black"
         android:textSize="16sp"
         android:fontFamily="sans-serif"
@@ -67,6 +79,7 @@
         android:textColor="@android:color/white"
         android:gravity="center"
         tools:text="@android:string/ok"
+        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@+id/tv_item_detail_desc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
