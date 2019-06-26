@@ -28,6 +28,8 @@ public class MainActivity extends BaseActivity {
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setViewModel(mViewModel);   // set variables in xml
         binding.setLifecycleOwner(this);    // set lifecycle owner for Livedata in xml
+
+        hideToolbar();
     }
 
     @Override

@@ -33,6 +33,8 @@ public class ItemListActivity extends BaseActivity implements ItemListAdapter.On
 
     private void setupView() {
 
+        hideToolbar();
+
         // 1. init recyclerview
         initRecyclerview();
 
