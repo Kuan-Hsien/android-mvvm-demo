@@ -15,111 +15,133 @@
         android:background="@drawable/img_covor"
         tools:context=".view.MainActivity">
 
-        <!--invisible-->
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_cover"
-            android:layout_width="0dp"
+        <ScrollView
+            android:id="@+id/scrollview_main_page"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:imageResource="@{viewModel.info.getImageRes()}"
-            android:visibility="gone"
+            android:fillViewport="true"
+            android:overScrollMode="never"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent">
 
-        <!--invisible-->
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_cover_image"
-            android:layout_width="0dp"
-            android:layout_height="320dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="64dp"
-            android:layout_marginEnd="64dp"
-            android:layout_marginBottom="36dp"
-            android:src="@{viewModel.info.getImageRes()}"
-            android:scaleType="fitCenter"
-            android:visibility="gone"
-            app:layout_constraintVertical_chainStyle="packed"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/tv_cover_title"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
 
-        <!--invisible-->
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_cover_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:textSize="24sp"
-            android:fontFamily="sans-serif-medium"
-            android:textStyle="normal"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:text="@{viewModel.info.getTitle()}"
-            tools:text="Item Title"
-            android:visibility="gone"
-            app:layout_constraintTop_toBottomOf="@+id/iv_cover_image"
-            app:layout_constraintBottom_toTopOf="@+id/tv_cover_desc"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintlayout_main_page"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <!--invisible-->
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_cover_desc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="36dp"
-            android:textSize="14sp"
-            android:fontFamily="sans-serif"
-            android:textStyle="normal"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:text="@{viewModel.info.getDesc()}"
-            tools:text="Item Desc"
-            android:visibility="gone"
-            app:layout_constraintTop_toBottomOf="@+id/tv_cover_title"
-            app:layout_constraintBottom_toTopOf="@+id/btn_to_item_page"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_to_item_page"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:textSize="16sp"
-            android:fontFamily="sans-serif-medium"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"
-            android:gravity="center"
-            android:text="@string/button_show_item_list"
-            android:onClick="startItemListActivity"
-            android:background="@android:color/transparent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/btn_to_info_page" />
+                <!--invisible-->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_cover"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:imageResource="@{viewModel.info.getImageRes()}"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_to_info_page"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:textSize="16sp"
-            android:fontFamily="sans-serif-medium"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"
-            android:gravity="center"
-            android:text="@string/button_show_information"
-            android:onClick="startInfoActivity"
-            android:background="@android:color/transparent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+                <!--invisible-->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_cover_image"
+                    android:layout_width="0dp"
+                    android:layout_height="320dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="64dp"
+                    android:layout_marginEnd="64dp"
+                    android:layout_marginBottom="36dp"
+                    android:src="@{viewModel.info.getImageRes()}"
+                    android:scaleType="fitCenter"
+                    android:visibility="gone"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_cover_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
 
+                <!--invisible-->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_cover_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:textSize="24sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textStyle="normal"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:text="@{viewModel.info.getTitle()}"
+                    tools:text="Item Title"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_cover_image"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_cover_desc"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <!--invisible-->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_cover_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="36dp"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="normal"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:text="@{viewModel.info.getDesc()}"
+                    tools:text="Item Desc"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_cover_title"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_to_item_page"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_to_item_page"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:gravity="center"
+                    android:text="@string/button_show_item_list"
+                    android:onClick="startItemListActivity"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/btn_to_info_page" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_to_info_page"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:gravity="center"
+                    android:text="@string/button_show_information"
+                    android:onClick="startInfoActivity"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
 
