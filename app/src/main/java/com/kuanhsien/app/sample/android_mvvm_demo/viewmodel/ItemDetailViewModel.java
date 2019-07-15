@@ -27,7 +27,7 @@ public class ItemDetailViewModel extends ViewModel {
     public LiveData<ItemInfoModel> itemInfo = Transformations.switchMap(mItemId, new Function<String, LiveData<ItemInfoModel>>() {
         @Override
         public LiveData<ItemInfoModel> apply(String input) {
-            return mRepository.getItemInfo(input);
+            return mRepository.getItemInfoLiveData(input);
         }
     });
 

@@ -30,7 +30,7 @@ public class ItemListViewModel extends ViewModel {
     public LiveData<List<ItemInfoModel>> dataList = Transformations.switchMap(mStartQuery, new Function<Boolean, LiveData<List<ItemInfoModel>>>() {
         @Override
         public LiveData<List<ItemInfoModel>> apply(Boolean input) {
-            return mRepository.getItemInfoList();
+            return mRepository.getItemInfoListLiveData();
         }
     });
 

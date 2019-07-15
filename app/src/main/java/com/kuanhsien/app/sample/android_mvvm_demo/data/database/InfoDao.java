@@ -17,10 +17,10 @@ import java.util.List;
 public interface InfoDao {
 
     @Query("SELECT * FROM info_table")
-    LiveData<List<InfoModel>> getInfoList();
+    LiveData<List<InfoModel>> getInfoListLiveData();
 
     @Query("SELECT * FROM info_table WHERE item_id = :itemId")
-    LiveData<InfoModel> getInfo(String itemId);
+    LiveData<InfoModel> getInfoLiveData(String itemId);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertInfoAll(InfoModel... items);
@@ -30,4 +30,9 @@ public interface InfoDao {
 
     @Delete
     void deleteInfo(InfoModel info);
+
+    // [Demo] query without return LiveData
+    @Query("SELECT * FROM info_table WHERE item_id = :itemId")
+    InfoModel getInfo(String itemId);
+
 }

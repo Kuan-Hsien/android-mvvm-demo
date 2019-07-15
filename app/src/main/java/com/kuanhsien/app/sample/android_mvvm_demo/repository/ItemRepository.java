@@ -1,13 +1,12 @@
 package com.kuanhsien.app.sample.android_mvvm_demo.repository;
 
 import android.content.Context;
-
+import androidx.lifecycle.LiveData;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.database.AppDatabase;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.database.ItemInfoDao;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.model.ItemInfoModel;
-
 import java.util.List;
-import androidx.lifecycle.LiveData;
+
 
 public class ItemRepository {
 
@@ -20,12 +19,12 @@ public class ItemRepository {
     }
 
     // query and mutate data
-    public LiveData<List<ItemInfoModel>> getItemInfoList() {
-        return mItemInfoDao.getItemInfoList();
+    public LiveData<List<ItemInfoModel>> getItemInfoListLiveData() {
+        return mItemInfoDao.getItemInfoListLiveData();
     }
 
-    public LiveData<ItemInfoModel> getItemInfo(String itemId) {
-        return mItemInfoDao.getItemInfo(itemId);
+    public LiveData<ItemInfoModel> getItemInfoLiveData(String itemId) {
+        return mItemInfoDao.getItemInfoLiveData(itemId);
     }
 
     public void insertItemAll(ItemInfoModel... items) {

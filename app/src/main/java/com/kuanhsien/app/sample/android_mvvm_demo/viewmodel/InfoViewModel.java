@@ -1,13 +1,13 @@
 package com.kuanhsien.app.sample.android_mvvm_demo.viewmodel;
 
 import android.content.Context;
-import androidx.lifecycle.Observer;
+import com.kuanhsien.app.sample.android_mvvm_demo.data.asynctask.GetInfoCallback;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.model.InfoModel;
 import com.kuanhsien.app.sample.android_mvvm_demo.repository.InfoRepository;
 import com.kuanhsien.app.sample.android_mvvm_demo.data.observable.ObservableInfoModel;
 
 
-public class InfoViewModel {
+public class InfoViewModel implements GetInfoCallback {
 
     // Repository
     private InfoRepository mRepository;
@@ -35,11 +35,11 @@ public class InfoViewModel {
     public void prepareData(String itemId) {
 
         // [Get data from Model-Layer]
-        mRepository.getInfo(itemId).observeForever(new Observer<InfoModel>() {
-            @Override
-            public void onChanged(InfoModel data) {
-                mInfo.setValue(data);
-            }
-        });
+        mRepository.getInfo(this, itemId);
+    }
+
+    @Override
+    public void onCompleted(InfoModel data) {
+        mInfo.setValue(data);
     }
 }
