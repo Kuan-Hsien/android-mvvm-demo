@@ -17,10 +17,10 @@ import java.util.List;
 public interface ItemInfoDao {
 
     @Query("SELECT * FROM item_info_table")
-    LiveData<List<ItemInfoModel>> getItemInfoList();
+    LiveData<List<ItemInfoModel>> getItemInfoListLiveData();
 
     @Query("SELECT * FROM item_info_table WHERE item_id = :itemId")
-    LiveData<ItemInfoModel> getItemInfo(String itemId);
+    LiveData<ItemInfoModel> getItemInfoLiveData(String itemId);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertItemAll(ItemInfoModel... items);

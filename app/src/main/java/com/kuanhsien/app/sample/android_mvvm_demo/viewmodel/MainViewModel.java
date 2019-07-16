@@ -29,7 +29,7 @@ public class MainViewModel extends ViewModel {
     public LiveData<InfoModel> info = Transformations.switchMap(mId, new Function<String, LiveData<InfoModel>>() {
         @Override
         public LiveData<InfoModel> apply(String input) {
-            return mInfoRepository.getInfo(input);
+            return mInfoRepository.getInfoLiveData(input);
         }
     });
 
