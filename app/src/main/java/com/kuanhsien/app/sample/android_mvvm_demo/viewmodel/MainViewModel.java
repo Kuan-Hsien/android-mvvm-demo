@@ -19,10 +19,6 @@ public class MainViewModel extends ViewModel {
         mInfoRepository = new InfoRepository(context);
     }
 
-    public void setRepository(InfoRepository infoRepository) {
-        mInfoRepository = infoRepository;
-    }
-
 
     // LiveData
     private MutableLiveData<String> mId = new MutableLiveData<>();

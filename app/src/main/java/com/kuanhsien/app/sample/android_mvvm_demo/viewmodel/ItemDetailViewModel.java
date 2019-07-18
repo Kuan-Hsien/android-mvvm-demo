@@ -18,10 +18,6 @@ public class ItemDetailViewModel extends ViewModel {
         mRepository = new ItemRepository(context);
     }
 
-    public void setRepository(ItemRepository repository) {
-        mRepository = repository;
-    }
-
     // LiveData
     private MutableLiveData<String> mItemId = new MutableLiveData<>();
     public LiveData<ItemInfoModel> itemInfo = Transformations.switchMap(mItemId, new Function<String, LiveData<ItemInfoModel>>() {

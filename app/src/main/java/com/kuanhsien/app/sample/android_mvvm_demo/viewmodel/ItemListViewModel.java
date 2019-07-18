@@ -20,10 +20,6 @@ public class ItemListViewModel extends ViewModel {
         mRepository = new ItemRepository(context);
     }
 
-    public void setRepository(ItemRepository repository) {
-        mRepository = repository;
-    }
-
 
     // LiveData
     private MutableLiveData<Boolean> mStartQuery = new MutableLiveData<>();
