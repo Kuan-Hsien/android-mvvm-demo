@@ -16,10 +16,6 @@ public class InfoViewModel implements GetInfoCallback {
         mRepository = new InfoRepository(context);
     }
 
-    public void setRepository(InfoRepository repository) {
-        mRepository = repository;
-    }
-
 
     // [Notify View-Layer observers]
     // Self-implemented observer-pattern
