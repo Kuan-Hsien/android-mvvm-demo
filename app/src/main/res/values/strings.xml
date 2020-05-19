@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Android-mvvm-demo</string>
+    <string name="app_name">朱子家訓</string>
 
     <string name="button_show_item_list">閱讀經典</string>
     <string name="button_show_information">作者介紹</string>
